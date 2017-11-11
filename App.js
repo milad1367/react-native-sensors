@@ -7,15 +7,28 @@ import thunk from 'redux-thunk';
 import { createStore, applyMiddleware } from 'redux';
 import reducer from './src/reducers';
 
-const store = createStore(reducer,applyMiddleware(thunk));
+
+const initialState = { 
+  pedometer: { Steps: 0 , LastDaySteps: 0 }
+};
+
+const store = createStore(reducer,initialState,applyMiddleware(thunk));
+
+
+console.log(store.getState());
+store.subscribe( () => {
+  console.log(store.getState());
+});
+
 
 export default class App extends React.Component {
   render() {
     return (
-              <View style={styles.container} >
+      <Provider store={store}>
+        <View style={styles.container} >
           <Index />
         </View>
-      
+      </Provider>
     );
   }
 }

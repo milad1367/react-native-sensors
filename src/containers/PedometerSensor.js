@@ -2,8 +2,9 @@ import Expo from "expo";
 import React from "react";
 import { Pedometer,Constants } from "expo";
 import { StyleSheet, Text, View } from "react-native";
-
-export default class PedometerSensor extends React.Component {
+import { connect } from 'react-redux';
+import { setSteps,setLastDaySteps,setGps } from '../actions'
+ class PedometerSensor extends React.Component {
   state = {
     isPedometerAvailable: "checking",
     pastStepCount: 0,
@@ -23,6 +24,9 @@ export default class PedometerSensor extends React.Component {
       this.setState({
         currentStepCount: result.steps
       });
+
+      this.props.dispatch(setSteps(result.steps));
+      
     });
 
     Pedometer.isAvailableAsync().then(
@@ -44,6 +48,8 @@ export default class PedometerSensor extends React.Component {
     Pedometer.getStepCountAsync(start, end).then(
       result => {
         this.setState({ pastStepCount: result.steps });
+        this.props.dispatch(setLastDaySteps(result.steps));
+        
       },
       error => {
         this.setState({
@@ -74,6 +80,10 @@ export default class PedometerSensor extends React.Component {
   }
 }
 
+
+PedometerSensor = connect()(PedometerSensor);
+
+export default PedometerSensor
 const styles = StyleSheet.create({
   container: {
     flex: 1,

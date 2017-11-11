@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { Platform, Text, View, StyleSheet } from 'react-native';
 import { Constants, Location, Permissions } from 'expo';
+import { connect } from 'react-redux';
+import { setGps } from '../actions'
 
-export default class GpsSensor extends Component {
+ class GpsSensor extends Component {
   state = {
     location: null,
     errorMessage: null,
@@ -38,7 +40,7 @@ export default class GpsSensor extends Component {
         distanceInterval: 1
     }, (loc) => {
         if (loc.timestamp) {
-           // this.props.dispatch(getGps(loc));
+           this.props.dispatch(setGps(loc));
            this.setState({location:loc});
         } else {
           this.setState({errorMessage:'Problems on update location'})
@@ -62,6 +64,10 @@ export default class GpsSensor extends Component {
     );
   }
 }
+
+GpsSensor = connect()(GpsSensor);
+
+export default GpsSensor
 
 const styles = StyleSheet.create({
   container: {
