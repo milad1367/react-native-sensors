@@ -56,6 +56,7 @@ export default class GpsSensor extends Component {
 
     return (
       <View style={styles.container}>
+        <Text> Gps Sensor : </Text>
         <Text style={styles.paragraph}>{text}</Text>
       </View>
     );

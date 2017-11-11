@@ -1,5 +1,18 @@
 {
   "expo": {
-    "sdkVersion": "22.0.0"
+   "name": "react-native-sensors",
+   "icon": "./me.png",
+   "version": "1.0.0",
+   "slug": "react-native-sensors",
+   "sdkVersion": "22.0.0",
+   "ios": {
+     "bundleIdentifier": "com.milad1367.reactNativeSensors"
+   },
+   "android": {
+     "package": "com.milad1367.reactNativeSensors"
+   }
+
+   
   }
 }
+

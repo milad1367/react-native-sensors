@@ -54,7 +54,7 @@ export default class GyroscopeSensor extends React.Component {
 
     return (
       <View style={styles.sensor}>
-        <Text>Gyroscope:</Text>
+        <Text>Gyroscope sensor:</Text>
         <Text>x: {round(x)} y: {round(y)} z: {round(z)}</Text>
 
         <View style={styles.buttonContainer}>
