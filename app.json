@@ -9,7 +9,8 @@
      "bundleIdentifier": "com.milad1367.reactNativeSensors"
    },
    "android": {
-     "package": "com.milad1367.reactNativeSensors"
+     "package": "com.milad1367.reactNativeSensors",
+     "permissions":["ACCESS_COARSE_LOCATION","ACCESS_FINE_LOCATION"]
    }
 
    
