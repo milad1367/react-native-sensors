@@ -1,3 +1,7 @@
+## react native snsors :
+The project has used native response, redux and expo.this projrct does not have ui.my goal was to use redux and expo sdk in the react-native.I wanted to showcase an extraordinary structure with the leadership of redux and hosting the react-native.
+The project consists of three GPS sensors,pedometer and a gyroscope.
+
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
 Below you'll find information about performing common tasks. The most recent version of this guide is available [here](https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/README.md).
